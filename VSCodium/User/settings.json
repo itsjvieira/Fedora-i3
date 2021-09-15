@@ -1,0 +1,10 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Monokai",
+    "editor.fontSize": 12,
+    "git.autofetch": true,
+    "editor.scrollbar.vertical": "hidden",
+    "workbench.activityBar.visible": false,
+    "editor.fontFamily": "'Liberation Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "terminal.integrated.fontSize": 12
+}
