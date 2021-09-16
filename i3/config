@@ -135,8 +135,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -163,7 +161,20 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+mode "power: l-lock, e-exit, p-poweroff, r-reboot" {
+        bindsym l exec i3lock
+        bindsym e exec i3-msg exit
+        bindsym p exec systemctl poweroff
+        bindsym r exec systemctl reboot
+
+        # back to normal: Enter or Escape or $mod+e
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+Shift+e mode "default"
+}
+
 bindsym $mod+r mode "resize"
+bindsym $mod+Shift+e mode "power: l-lock, e-exit, p-poweroff, r-reboot"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -171,8 +182,6 @@ bar {
         position top
         status_command i3status
 }
-
-bindsym $mod+Shift+a exec i3lock
 
 bindsym $mod+b exec google-chrome
 bindsym $mod+c exec codium
