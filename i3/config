@@ -13,7 +13,7 @@ font pango: Nimbus Sans 9
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -u -i ~/.config/i3/lockscreen.png
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -42,7 +42,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun -font 'monospace 9'"
+bindsym $mod+d exec --no-startup-id "rofi -modi drun,run -show drun -font 'Nimbus Sans 10'"
 
 # change focus
 bindsym $mod+h focus left
@@ -162,7 +162,7 @@ mode "resize" {
 }
 
 mode "power: l-lock, e-exit, p-poweroff, r-reboot" {
-        bindsym l exec i3lock
+        bindsym l exec i3lock -u -i ~/.config/i3/lockscreen.png; mode "default"
         bindsym e exec i3-msg exit
         bindsym p exec systemctl poweroff
         bindsym r exec systemctl reboot
@@ -189,4 +189,5 @@ bindsym $mod+t exec thunar
 bindsym $mod+p exec keepassxc
 bindsym $mod+v exec vlc
 
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id keepassxc
