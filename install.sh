@@ -15,7 +15,7 @@ sudo dnf -y install qpdfview-qt5 viewnior vlc
 sudo dnf -y install adwaita-gtk2-theme arandr
 sudo dnf -y install xfce4-terminal texlive-base
 sudo dnf -y install gcc gcc-c++ pulseaudio-libs-devel boost-devel
-sudo dnf -y install audacity keepassxc libreoffice
+sudo dnf -y install audacity libreoffice
 sudo dnf -y install codium discord
 sudo dnf -y install akmod-nvidia
 
