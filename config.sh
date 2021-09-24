@@ -11,7 +11,6 @@ mkdir -p ~/.config/gtk-3.0
 
 cp config/i3/config ~/.config/i3/config
 cp config/i3status/config ~/.config/i3status/config
-cp config/VSCodium/storage.json ~/.config/VSCodium/storage.json
 cp config/VSCodium/User/settings.json ~/.config/VSCodium/User/settings.json
 cp config/xfce4/terminal/terminalrc ~/.config/xfce4/terminal/terminalrc
 cp config/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini
